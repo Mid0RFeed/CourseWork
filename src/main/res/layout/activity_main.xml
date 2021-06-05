@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineShadow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/car_white_auto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/shadow_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineShadow" />
+
+
+    <TextView
+        android:id="@+id/textViewStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rvBluetooth"
+        app:layout_constraintBottom_toBottomOf="@id/rvBluetooth"
+        android:text="Не подключен"
+        android:textColor="@color/black"
+        android:fontFamily="@font/g_semi_bold"
+        android:textSize="18sp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rvBluetooth"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bc_border"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageBluetooth"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_bluetooth_signal"
+            app:tint="@color/black" />
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint1"
+        android:layout_marginTop="12dp"
+        android:layout_width="0dp"
+        android:layout_height="128dp"
+        android:background="@drawable/bc_border"
+        app:layout_constraintLeft_toLeftOf="@id/rvBluetooth"
+        app:layout_constraintRight_toRightOf="@id/guideline3"
+        app:layout_constraintTop_toBottomOf="@id/rvBluetooth">
+
+        <ImageView
+            android:id="@+id/imageSpeedometer"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_speedometer"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/imageSpeedometer"
+            app:layout_constraintTop_toTopOf="@id/imageSpeedometer"
+            app:layout_constraintBottom_toBottomOf="@id/imageSpeedometer"
+            android:layout_marginStart="12dp"
+            android:text="Скорость"
+            android:textColor="@color/black"
+            android:fontFamily="@font/g_semi_bold"
+            />
+
+        <TextView
+            android:id="@+id/textViewSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 kм/ч"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/g_bold"
+            app:layout_constraintTop_toBottomOf="@id/imageSpeedometer"
+            app:layout_constraintLeft_toLeftOf="@id/imageSpeedometer"
+            android:textSize="30sp"
+            />
+
+        <ImageView
+            android:id="@+id/imageEngine"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginBottom="12dp"
+            android:src="@drawable/ic_malfunction_indicador"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/textL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/imageEngine"
+            app:layout_constraintTop_toTopOf="@id/imageEngine"
+            app:layout_constraintBottom_toBottomOf="@id/imageEngine"
+            android:layout_marginStart="6dp"
+            android:text="Нагрузка :"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/g_semi_bold"
+            />
+
+        <TextView
+            android:id="@+id/textPressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/textL"
+            app:layout_constraintTop_toTopOf="@id/imageEngine"
+            app:layout_constraintBottom_toBottomOf="@id/imageEngine"
+            android:layout_marginStart="3dp"
+            android:text="0%"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/g_bold"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint2"
+        android:layout_marginTop="12dp"
+        android:layout_width="0dp"
+        android:layout_height="128dp"
+        app:layout_constraintLeft_toRightOf="@id/guideline3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvBluetooth"
+        android:background="@drawable/bc_border"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        >
+
+        <ImageView
+            android:id="@+id/imageRound"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_belt"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/imageRound"
+            app:layout_constraintTop_toTopOf="@id/imageRound"
+            app:layout_constraintBottom_toBottomOf="@id/imageRound"
+            android:layout_marginStart="12dp"
+            android:text="Oборотов в мин"
+            android:textColor="@color/black"
+            android:fontFamily="@font/g_semi_bold"
+            />
+
+        <TextView
+            android:id="@+id/textViewRound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 об/м"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/g_bold"
+            app:layout_constraintTop_toBottomOf="@id/imageRound"
+            app:layout_constraintLeft_toLeftOf="@id/imageRound"
+            android:textSize="30sp"
+            />
+
+        <ImageView
+            android:id="@+id/imagePiston"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginBottom="12dp"
+            android:src="@drawable/ic_engine_coolant"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/textP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/imagePiston"
+            app:layout_constraintTop_toTopOf="@id/imagePiston"
+            app:layout_constraintBottom_toBottomOf="@id/imagePiston"
+            android:layout_marginStart="6dp"
+            android:text="Температура :"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/g_semi_bold"
+            />
+
+        <TextView
+            android:id="@+id/textViewTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/textP"
+            app:layout_constraintTop_toTopOf="@id/imagePiston"
+            app:layout_constraintBottom_toBottomOf="@id/imagePiston"
+            android:layout_marginStart="3dp"
+            android:text="0 °C"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/g_bold"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint3"
+        android:layout_marginTop="12dp"
+        android:layout_width="0dp"
+        android:layout_height="128dp"
+        android:background="@drawable/bc_border"
+        app:layout_constraintLeft_toLeftOf="@id/rvBluetooth"
+        app:layout_constraintRight_toRightOf="@id/guideline3"
+        app:layout_constraintTop_toBottomOf="@id/constraint1">
+
+        <ImageView
+            android:id="@+id/imageOilTemp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_fuel"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/imageOilTemp"
+            app:layout_constraintTop_toTopOf="@id/imageOilTemp"
+            app:layout_constraintBottom_toBottomOf="@id/imageOilTemp"
+            android:layout_marginStart="12dp"
+            android:text="Pасход топлива"
+            android:textColor="@color/black"
+            android:fontFamily="@font/g_semi_bold"
+            />
+
+        <TextView
+            android:id="@+id/tempOil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 л/ч"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/g_bold"
+            app:layout_constraintTop_toBottomOf="@id/imageOilTemp"
+            app:layout_constraintLeft_toLeftOf="@id/imageOilTemp"
+            android:textSize="30sp"
+            />
+
+        <ImageView
+            android:id="@+id/imageOil"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginBottom="12dp"
+            android:src="@drawable/ic_oil"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/textO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/imageOil"
+            app:layout_constraintTop_toTopOf="@id/imageOil"
+            app:layout_constraintBottom_toBottomOf="@id/imageOil"
+            android:layout_marginStart="6dp"
+            android:text="Pасход масла :"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/g_semi_bold"
+            />
+
+        <TextView
+            android:id="@+id/textUsage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/textO"
+            app:layout_constraintTop_toTopOf="@id/imageOil"
+            app:layout_constraintBottom_toBottomOf="@id/imageOil"
+            android:layout_marginStart="3dp"
+            android:text="0 г/с"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/g_bold"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Количество отправленных данных :"
+        app:layout_constraintTop_toBottomOf="@id/constraint3"
+        app:layout_constraintLeft_toLeftOf="@id/constraint3"
+        android:fontFamily="@font/g_regular"
+        android:textColor="@color/black"
+        android:layout_marginTop="12dp"
+        />
+
+    <TextView
+        android:id="@+id/textSse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Количество отправленных данных :"
+        app:layout_constraintTop_toBottomOf="@id/constraint3"
+        app:layout_constraintLeft_toLeftOf="@id/constraint3"
+        android:fontFamily="@font/g_regular"
+        android:textColor="@color/black"
+        android:layout_marginTop="12dp"
+        />
+
+    <TextView
+        android:id="@+id/textSentData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintTop_toTopOf="@id/textSse"
+        app:layout_constraintBottom_toBottomOf="@id/textSse"
+        android:layout_marginStart="4dp"
+        app:layout_constraintLeft_toRightOf="@id/textSse"
+        android:fontFamily="@font/g_semi_bold"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/textLat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Широта :"
+        app:layout_constraintTop_toBottomOf="@id/textSse"
+        app:layout_constraintLeft_toLeftOf="@id/constraint3"
+        android:fontFamily="@font/g_regular"
+        android:textColor="@color/black"
+        android:layout_marginTop="12dp"
+        />
+
+    <TextView
+        android:id="@+id/textLatitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0"
+        app:layout_constraintTop_toTopOf="@id/textLat"
+        app:layout_constraintBottom_toBottomOf="@id/textLat"
+        android:layout_marginStart="4dp"
+        app:layout_constraintLeft_toRightOf="@id/textLat"
+        android:fontFamily="@font/g_semi_bold"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/textLon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Долгота :"
+        app:layout_constraintTop_toBottomOf="@id/textLat"
+        app:layout_constraintLeft_toLeftOf="@id/constraint3"
+        android:fontFamily="@font/g_regular"
+        android:textColor="@color/black"
+        android:layout_marginTop="12dp"
+        />
+
+    <TextView
+        android:id="@+id/textLongitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0"
+        app:layout_constraintTop_toTopOf="@id/textLon"
+        app:layout_constraintBottom_toBottomOf="@id/textLon"
+        android:layout_marginStart="4dp"
+        app:layout_constraintLeft_toRightOf="@id/textLon"
+        android:fontFamily="@font/g_semi_bold"
+        android:textColor="@color/black"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint4"
+        android:layout_marginTop="12dp"
+        android:layout_width="0dp"
+        android:layout_height="128dp"
+        app:layout_constraintLeft_toRightOf="@id/guideline3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraint2"
+        android:background="@drawable/bc_border"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        >
+
+        <ImageView
+            android:id="@+id/imagePressure"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_pistons"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/imagePressure"
+            app:layout_constraintTop_toTopOf="@id/imagePressure"
+            app:layout_constraintBottom_toBottomOf="@id/imagePressure"
+            android:layout_marginStart="12dp"
+            android:text="Давление"
+            android:textColor="@color/black"
+            android:fontFamily="@font/g_semi_bold"
+            />
+
+        <TextView
+            android:id="@+id/textCompress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 кПа"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/g_bold"
+            app:layout_constraintTop_toBottomOf="@id/imagePressure"
+            app:layout_constraintLeft_toLeftOf="@id/imagePressure"
+            android:textSize="30sp"
+            />
+
+        <ImageView
+            android:id="@+id/imageBattery"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginBottom="12dp"
+            android:src="@drawable/ic_battery"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/textB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/imageBattery"
+            app:layout_constraintTop_toTopOf="@id/imageBattery"
+            app:layout_constraintBottom_toBottomOf="@id/imageBattery"
+            android:layout_marginStart="6dp"
+            android:text="Вольт :"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/g_semi_bold"
+            />
+
+        <TextView
+            android:id="@+id/textVolt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/textB"
+            app:layout_constraintTop_toTopOf="@id/imageBattery"
+            app:layout_constraintBottom_toBottomOf="@id/imageBattery"
+            android:layout_marginStart="3dp"
+            android:text="0 В"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/g_bold"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/bc_swiper"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <com.romainpiel.shimmer.ShimmerTextView
+            android:id="@+id/shimmerSwipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/g_semi_bold"
+            android:text="Проведите, чтобы отправить"
+            android:textColor="@color/white"
+            app:reflectionColor="@color/black" />
+
+        <RelativeLayout
+            android:id="@+id/rvSwiper"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/ic_swiper">
+
+            <ImageView
+                android:id="@+id/arrowRight"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_right_arrow"
+                app:tint="@color/black" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerInParent="true"
+                android:indeterminateTint="@color/black"
+                android:progressTint="@color/black"
+                android:visibility="gone"
+
+                />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

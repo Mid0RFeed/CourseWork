@@ -1,0 +1,9 @@
+ru/egorxoroshenkov/carinfo/BuildConfig.java
+ ru.egorxoroshenkov.carinfo.BuildConfig
+ru/egorxoroshenkov/carinfo/BluetoothService.java
+ ru.egorxoroshenkov.carinfo.BluetoothService
+ ru.egorxoroshenkov.carinfo.BluetoothService$AcceptThread
+ ru.egorxoroshenkov.carinfo.BluetoothService$ConnectThread
+ ru.egorxoroshenkov.carinfo.BluetoothService$ConnectedThread
+ru/egorxoroshenkov/carinfo/TroubleCodes.java
+ ru.egorxoroshenkov.carinfo.TroubleCodes

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DeviceListActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+        <TextView android:id="@+id/title_paired_devices"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center"
+            android:fontFamily="@font/g_bold"
+            android:text="Сопряженные устройства"
+            android:background="@color/black"
+            android:textColor="#fff"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="16sp"
+            />
+        <ListView
+            android:background="@color/white"
+            android:id="@+id/paired_devices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="8sp"
+            android:transcriptMode="alwaysScroll"
+            android:layout_weight="1"
+            />
+        <TextView android:id="@+id/title_new_devices"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:fontFamily="@font/g_semi_bold"
+            android:text="Другие устройства"
+            android:visibility="gone"
+            android:background="@color/black"
+            android:textColor="#fff"
+            android:paddingLeft="5dp"
+            />
+        <ListView
+            android:background="@color/white"
+            android:id="@+id/new_devices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="8sp"
+            android:transcriptMode="alwaysScroll"
+            android:layout_weight="2"
+            />
+        <TextView android:id="@+id/button_scan"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:background="@color/black"
+            android:text="Сканировать"
+            android:fontFamily="@font/g_semi_bold"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
